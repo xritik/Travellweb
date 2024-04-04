@@ -1,0 +1,36 @@
+html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            scrollbar-width: none;
+        }
+        body {
+            /* background: linear-gradient(to top right, rgba(0, 0, 0, 0.863),#2b0909, black); */
+            background-color: #192734;
+            background-size: cover;
+        }
+        .dropdown-menu{
+          width: 100px;
+          margin-left: 50px;
+        }
+        .navbar-brand{
+          font-size: 30px;
+          font-family: 'Protest Riot', sans-serif;
+          letter-spacing: 1px;
+        } 
+
+        .MySideBar {
+            width: 240px !important;
+          }
+
+
+        .a{
+          -webkit-animation-duration:2s;animation-duration:2s;
+          -webkit-animation-duration:calc(var(--animate-duration)*2);
+          animation-duration:calc(var(--animate-duration)*2);
+          -webkit-animation-name:hinge;
+          animation-name:hinge;
+          -webkit-transform-origin:top left;
+          transform-origin:top left
+        }
