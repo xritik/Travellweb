@@ -4,6 +4,12 @@ body{
     place-items: center;
     /* overflow: hidden; */
 }
+:root{
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #0ef;
+}
 .slider{
     height: 350px;
     margin: auto;
@@ -12,7 +18,7 @@ body{
     display: grid;
     place-items: center;
     overflow: hidden;
-    margin-top: 150px;
+    margin-top: 90px;
 }
 .slide-track{
     display: flex;
@@ -39,6 +45,56 @@ body{
     perspective: 100px;
     object-fit: cover;
 }
+.slide-track .slide{
+    position: relative;
+    /* border-radius: 2rem; */
+    /* box-shadow: 0 0 1rem var(--bg-color); */
+    overflow: hidden;
+    display: flex;
+}
+.slide .portfolio-layer{
+    position: absolute;
+    bottom: 0;
+    left: 07;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), var(--main-color));
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(100%);
+    transition: 0.5s ease;
+    transition: transform 1s;
+}
+.slide:hover .portfolio-layer{
+    transform: translateY(0);
+}
+.my {
+    width: 100%;
+    transition: transform 1s;
+    height: 200px;
+    width: 300px;
+}
+.my:hover{
+    transform: translateZ(20px);
+    animation-delay: 10s;
+}
+.portfolio-layer h4{
+    margin-left: -25%;
+    width: 150%;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: black;
+}
+.portfolio-layer p{
+    margin-left: -20% !important;
+    width: 140%;
+    font-size: 1.1rem;
+    margin: .3rem 0 1rem;
+    color: white;
+}
 .imga {
     width: 100%;
     transition: transform 1s;
@@ -48,18 +104,18 @@ body{
 .slide img{
   box-shadow: 0 0 25px 1px rgba(0, 255, 255, 0.7);
 }
-img:hover{
+/* img:hover{
     transform: translateZ(20px);
     animation-delay: 10s;
     box-shadow: none;
-}
+} */
 .slider::before,
 .slider::after {
     background: linear-gradient(to right, #192734 0%, rgba(255,255,255,0) 100%);
     content: '';
-    height: 57%;
+    height: 74%;
     position: absolute;
-    margin-top: 75px;
+    margin-top: 46px;
     width: 20%;
     z-index: 2;
 }

@@ -1,0 +1,45 @@
+body{
+    overflow-x: hidden;
+  }
+
+  /* Set the width of columns and images for smaller screens */
+  @media (max-width: 992px) {
+    .col-5,
+    .col-1 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .nav-link{
+        color: aliceblue !important;
+    }
+    .text-body-secondary{
+        color: aliceblue !important;
+    }
+    h5{
+        color: aliceblue;
+    }
+    .aa{
+      width: 90%;
+      margin-top: 70px;
+    }
+    @media (max-width: 991px){
+      .navbar-brand{
+        margin-left: 45px !important;
+        font-size: 29px;
+      }
+      .footer-media{
+        margin-top: -90px;
+      }
+      .footer-media img{
+        width: 25px;
+      }
+      .aa{
+        margin-left: 20px;
+      }
+    }

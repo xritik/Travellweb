@@ -24,6 +24,50 @@
         .card-link {
             text-decoration: none;
         }
+        .myselect{
+            border-radius: 3px;
+        }
+           /* This class is used in filter section to hide the cards when we click to choose some special */
+        .cards.hide{
+            display: none;
+        }
+        .noresult{
+        margin-top: 50px;
+        color: white;
+        }
+        .aa{
+          width: 90%;
+        }
+        @media (max-width: 991px){
+          .myselect{
+            height: 35px;
+          }
+          .navbar-brand{
+            margin-left:10px !important;
+            font-size: 27px;
+          }
+          .searchbar{
+            height: 30px;
+            width: 300px;
+            margin-left: 25%;
+            margin-right: 25%;
+          }
+          .searchbar button{
+            width: 70px;
+          }
+          .footer-media{
+            margin-top: -90px;
+          }
+          .footer-media img{
+            width: 25px;
+          }
+          .noresult{
+            margin-top: 90px;
+          }
+          .aa{
+            margin-left: 20px;
+          }
+        }
     </style>
 </head>
 <body class="background">
@@ -35,7 +79,19 @@
       <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <a class="navbar-brand d-grid col-3 mx-auto animate__animated animate__fadeInLeft" href="#"><div id="hang">Travell Memory Web</div></a>
+      <div class="col-md-1"></div>
+      <select name="country" id="country" class="myselect text-bg-dark filter_buttons">
+        <option class="active" value="all">Show all</option>
+        <option value="India">India</option>
+        <option value="Thailand">Thailand</option>
+        <option value="Indonesia">Indonesia</option>
+      </select>
+      <a class="navbar-brand d-grid col-2 mx-auto animate__animated animate__fadeInLeft" href="#"><div id="hang">Travell Memory Web</div></a>
+      <form class="searchbar d-flex" role="search" id="search">
+        <input class="form-control me-2" id="searchbar" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-sm btn-outline-success" type="submit">Search</button>
+      </form>
+      <div class="col-1"></div>
       <div class="offcanvas offcanvas-start text-bg-dark MySideBar" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
@@ -43,6 +99,14 @@
         </div>
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <!-- <li class="nav-item">
+              <select name="country" id="country" class="myselect2 text-bg-dark filter_buttons">
+                <option class="active" value="all">Show all</option>
+                <option value="India">India</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Indonesia">Indonesia</option>
+              </select>
+            </li> -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Travelled Years
@@ -87,144 +151,22 @@
       </div>          
       <!-- <div><a class="navbar-brand" href="#">Travell Memory Web</a></div> -->
     </div>
-</nav>
+  </nav>
 <!-- Nav bar end -->
 <br><br>
     <div class="container">
-      <div class="row">
-        <div class="col-md-4 col-12 animate__animated animate__fadeInUp">
-            <a href="../practic10.html" class="card-link">
-                <div class="card card1">
-                    <div class="container1">
-                        <img src="../imgvdos/bgimg4.jpg" alt="img">
-                    </div>
-                    <div class="details">
-                        <h3 class="aaa">First Card</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum ut incidunt distinctio cum quas atque.</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 col-12 animate__animated animate__fadeInUp">
-            <a href="" class="card-link">
-                <div class="card card2">
-                    <div class="container1">
-                        <img src="../imgvdos/bgimg3.jpg" alt="img">
-                    </div>
-                    <div class="details">
-                        <h3>Second Card</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum ut incidunt distinctio cum quas atque.</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 col-12 animate__animated animate__fadeInUp">
-            <a href="" class="card-link">
-                <div class="card card3">
-                    <div class="container1">
-                        <img src="../imgvdos/bgimg5.jpg" alt="img">
-                    </div>
-                    <div class="details">
-                        <h3>Third Card</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum ut incidunt distinctio cum quas atque.</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 col-12 animate__animated animate__fadeInUp">
-            <a href="" class="card-link">
-                <div class="card card1">
-                    <div class="container1">
-                        <img src="../imgvdos/bgimg4.jpg" alt="img">
-                    </div>
-                    <div class="details">
-                        <h3>First Card</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum ut incidunt distinctio cum quas atque.</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 col-12 animate__animated animate__fadeInUp">
-            <a href="" class="card-link">
-                <div class="card card2">
-                    <div class="container1">
-                        <img src="../imgvdos/bgimg3.jpg" alt="img">
-                    </div>
-                    <div class="details">
-                        <h3>Second Card</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum ut incidunt distinctio cum quas atque.</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 col-12 animate__animated animate__fadeInUp">
-            <a href="" class="card-link">
-                <div class="card card3">
-                    <div class="container1">
-                        <img src="../imgvdos/bgimg5.jpg" alt="img">
-                    </div>
-                    <div class="details">
-                        <h3>Third Card</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum ut incidunt distinctio cum quas atque.</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 col-12 animate__animated animate__fadeInUp">
-            <a href="" class="card-link">
-                <div class="card card3">
-                    <div class="container1">
-                        <img src="../imgvdos/bgimg5.jpg" alt="img">
-                    </div>
-                    <div class="details">
-                        <h3>Third Card</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum ut incidunt distinctio cum quas atque.</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 col-12 animate__animated animate__fadeInUp">
-            <a href="" class="card-link">
-                <div class="card card2">
-                    <div class="container1">
-                        <img src="../imgvdos/bgimg5.jpg" alt="img">
-                    </div>
-                    <div class="details">
-                        <h3>Third Card</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum ut incidunt distinctio cum quas atque.</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4 col-12 animate__animated animate__fadeInUp">
-            <a href="" class="card-link">
-                <div class="card card1">
-                    <div class="container1">
-                        <img src="../imgvdos/bgimg5.jpg" alt="img">
-                    </div>
-                    <div class="details">
-                        <h3>Third Card</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum ut incidunt distinctio cum quas atque.</p>
-                    </div>
-                </div>
-            </a>
-        </div>
-      </div>
+        <div class="row" id="a"></div>
     </div>
 
     <!-- footer start -->
-    <section>
-        <div class="container">     
-          <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+    <section class="aa">
+        <div class="container">
+          <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top animate__animated wow animate__backInDown">
             <div class="col mb-3">
               <!-- <a href="/" class="d-flex align-items-center mb-3 link-body-emphasis text-decoration-none">
                 <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
               </a> -->
-              <p class="text-body-secondary">© 2024</p>
+              <p class="text-body-secondary">© 2024 Travell Memory Web</p>
             </div>
         
             <!-- <div class="col mb-3">
@@ -243,29 +185,33 @@
             </div>
         
             <div class="col mb-3">
-              <h5>Section</h5>
+              <!-- <h5>Section</h5>
               <ul class="nav flex-column">
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Home</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Features</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">Pricing</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">FAQs</a></li>
                 <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-body-secondary">About</a></li>
-              </ul>
+              </ul> -->
             </div>
         
-            <div class="col mb-3">
+            <div class="col mb-3 footer-media">
               <ul class="nav col md-4 justify-content-end list-unstyled d-flex">
-                <li class="ms-3"><a class="text-body-secondary" href="#"><img src="../imgvdos/png/bxl-linkedin.png" alt="linkedin img" width="30px"></a></li>
-                <li class="ms-3"><a class="text-body-secondary" href="#"><img src="../imgvdos/png/bxl-instagram-alt.png" alt="instragram img" width="30px"></a></li>
-                <li class="ms-3"><a class="text-body-secondary" href="#"><img src="../imgvdos/png/bxl-twitter.png" alt="facebook img" width="30px"></a></li>
+                <li class="ms-2"><a class="text-body-secondary" href="https://www.linkedin.com/in/ashutoshh/"><img src="../imgvdos/png/bxl-linkedin.png" alt="linkedin img" width="30px"></a></li>
+                <li class="ms-2"><a class="text-body-secondary" href="https://www.instagram.com/coastalflirtcoder"><img src="../imgvdos/png/bxl-instagram-alt.png" alt="instragram img" width="30px"></a></li>
+                <li class="ms-2"><a class="text-body-secondary" href="https://github.com/redashu"><img src="../imgvdos/png/github-logo-36.png" alt="github img" width="30px"></a></li>
               </ul>
             </div>
           </footer>
+          <div class="row text-center">
+            <span class="text-white fs-7"><i>Website designed by:-</i> <a href="https://github.com/ritiksingh-06">@Ritik</a></span>
+          </div>
+          <br>
         </div>
-      </section>
-      <!--footer end-->
+    </section>
+    <!--footer end-->
 
-    <script>
+    <!-- <script>
         document.addEventListener('touchstart', function(event) {
           // Remove the 'touched' class from any previously touched element
           var previouslyTouched = document.querySelector('.a');
@@ -283,7 +229,328 @@
           setTimeout(()=>{
             d.classList.remove("a");
           }, 2500)
+        });
+    </script> -->
+
+    <script>
+
+//Data of places start
+let Places =[
+    {
+        name: "Bangkok",
+        country_name: "Thailand",
+        description: "Bangkok: Vibrant capital of Thailand, known for its rich culture, delicious cuisine, and bustling streets.",
+        image: "./images/Bangkok.jpg"
+    },
+    {
+        name: "Phuket Island",
+        country_name: "Thailand",
+        description: "Phuket Island: Famous Thai destination offering stunning beaches, vibrant nightlife, and adventurous water activities.",
+        image: "./images/Phuket Island.jpg"
+    },
+    {
+        name: "Krabi",
+        country_name: "Thailand",
+        description: "Krabi: Coastal paradise in Thailand, boasting limestone cliffs, pristine beaches, and opportunities for adventure and relaxation.",
+        image: "./images/Krabi.webp"
+    },
+    {
+        name: "Phi-Phi Island",
+        country_name: "Thailand",
+        description: "Phi Phi Island: Iconic Thai destination with turquoise waters, limestone formations, vibrant nightlife, and breathtaking scenery.",
+        image: "./images/Phi-Phi-Island.jpg"
+    },
+    {
+        name: "Uluwatu Temple Bali",
+        country_name: "Indonesia",
+        description: "Uluwatu Temple: Majestic sea temple in Bali perched on cliffs, offering stunning sunset views and cultural performances.",
+        image: "./images/Uluwatu-Temple-Bali.jpg"
+    },
+    {
+        name: "Bali",
+        country_name: "Indonesia",
+        description: "Bali: Indonesian island renowned for its lush landscapes, vibrant culture, stunning beaches, and spiritual atmosphere.",
+        image: "./images/Bali.jpg"
+    },
+    {
+        name: "Nusa Penida",
+        country_name: "Indonesia",
+        description: "Nusa Penida: Picturesque Indonesian island with rugged cliffs, crystal-clear waters, pristine beaches, and diverse marine life.",
+        image: "./images/nusa-penida-beach.jpg"
+    },
+    {
+        name: "Seminyak Beach",
+        country_name: "Indonesia",
+        description: "Seminyak Beach: Trendy Balinese destination with golden sands, world-class surfing, upscale resorts, and vibrant nightlife scene.",
+        image: "./images/Seminyak Beach.avif"
+    },
+    {
+        name: "Canggu",
+        country_name: "Indonesia",
+        description: "Canggu: Bali's trendy coastal village with surf breaks, beach clubs, rice fields, and bohemian atmosphere.",
+        image: "./images/Canggu.jpg"
+    },
+    {
+        name: "Ubud",
+        country_name: "Indonesia",
+        description: "Ubud: Cultural heart of Bali, surrounded by lush rice paddies, art galleries, temples, and serene landscapes.",
+        image: "./images/Ubud.jpg"
+    },
+    {
+        name: "Rishikesh",
+        country_name: "India",
+        state_name: "UttaraUttarakhand",
+        description: "Rishikesh: Spiritual hub in India, nestled in the Himalayas, renowned for yoga, meditation, and adventure sports.",
+        image: "./images/Rishikesh.webp"
+    },
+    {
+        name: "Haridwar",
+        country_name: "India",
+        state_name: "UttaraUttarakhand",
+        description: "Haridwar: Sacred city in India along the Ganges River, famous for temples, ghats, and religious ceremonies.",
+        image: "./images/Haridwar.jpg"
+    },
+    {
+        name: "Dehradun",
+        country_name: "India",
+        state_name: "UttaraUttarakhand",
+        description: "Dehradun: Capital of Uttarakhand, nestled in the Himalayan foothills, known for its scenic beauty and educational institutions.",
+        image: "./images/Dehradun.jpg"
+    },
+    {
+        name: "Mussoorie",
+        country_name: "India",
+        state_name: "UttaraUttarakhand",
+        description: "Mussoorie: Hill station in Uttarakhand, known for scenic beauty, colonial charm, waterfalls, and outdoor adventures.",
+        image: "./images/Mussoorie.jpg"
+    },
+    {
+        name: "Devprayag",
+        country_name: "India",
+        state_name: "UttaraUttarakhand",
+        description: "Devprayag: Sacred town in Uttarakhand, where the Alaknanda and Bhagirathi rivers merge, forming the Ganges River.",
+        image: "./images/Devprayag.jpg"
+    },
+    {
+        name: "Rudraprayag",
+        country_name: "India",
+        state_name: "UttaraUttarakhand",
+        description: "Rudraprayag: Spiritual town in Uttarakhand, situated at the confluence of the Alaknanda and Mandakini rivers.",
+        image: "./images/Rudraprayag.jpg"
+    },
+    {
+        name: "Manikaran",
+        country_name: "India",
+        state_name: "Himachal",
+        description: "Manikaran: Pilgrimage town in Himachal Pradesh, famous for hot springs, temples, and picturesque surroundings in Parvati Valley.",
+        image: "./images/Manikaran.avif"
+    },
+    {
+        name: "Tosh",
+        country_name: "India",
+        state_name: "Himachal",
+        description: "Tosh: Quaint village in Himachal Pradesh's Parvati Valley, known for its scenic beauty, tranquility, and cannabis culture.",
+        image: "./images/Tosh.jpg"
+    },
+    {
+        name: "Darcha",
+        country_name: "India",
+        state_name: "Himachal",
+        description: "Darcha: Remote village in Himachal Pradesh, serves as a gateway to Leh, known for trekking and camping.",
+        image: "./images/Darcha.jpg"
+    },
+    {
+        name: "Manali",
+        country_name: "India",
+        state_name: "Himachal",
+        description: "Manali: Picturesque hill station in HP, offering adventure sports, scenic landscapes, vibrant markets, and cultural experiences.",
+        image: "./images/Manali.jpg"
+    },
+    {
+        name: "Koksar",
+        country_name: "India",
+        state_name: "Himachal",
+        description: "Koksar: Small village in Himachal Pradesh, serves as an entry point to Lahaul Valley and Ladakh.",
+        image: "./images/Koksar.webp"
+    },
+    {
+        name: "Dharamshala",
+        country_name: "India",
+        state_name: "Himachal",
+        description: "Dharamshala: Tibetan settlement in Himachal Pradesh, home to the Dalai Lama, known for spirituality and scenic beauty.",
+        image: "./images/Dharamshala.jpg"
+    },
+    {
+        name: "Srinagar",
+        country_name: "India",
+        state_name: "Jammu & Kashmir",
+        description: "Srinagar: Capital of Jammu & Kashmir, renowned for Dal Lake, Mughal gardens, houseboats, and scenic vistas.",
+        image: "./images/Srinagar.jpg"
+    },
+    {
+        name: "Leh",
+        country_name: "India",
+        state_name: "Ladakh",
+        description: "Leh: High-altitude desert town in Ladakh, known for monasteries, rugged landscapes, trekking, and vibrant culture.",
+        image: "./images/Leh.jpg"
+    },
+    {
+        name: "Zanskar valley",
+        country_name: "India",
+        state_name: "Ladakh",
+        description: "Zanskar Valley: Remote Himalayan valley in Ladakh, famous for its rugged terrain, Buddhist monasteries, and adventurous trekking routes.",
+        image: "./images/Zanskar valley.jpg"
+    },
+    {
+        name: "Rameshwaram",
+        country_name: "India",
+        state_name: "Tamilnadu",
+        description: "Rameshwaram: Sacred pilgrimage town in Tamil Nadu, renowned for its temples, beaches, and cultural significance in Hinduism.",
+        image: "./images/Rameshwaram.webp"
+    },
+    {
+        name: "Coimbatore",
+        country_name: "India",
+        state_name: "Tamilnadu",
+        description: "Coimbatore: Major city in Tamil Nadu, known for its textile industry, educational institutions, and pleasant climate.",
+        image: "./images/Coimbatore.jpeg"
+    },
+    {
+        name: "Ooty",
+        country_name: "India",
+        state_name: "Tamilnadu",
+        description: "Ooty: Hill station in Tamil Nadu, famous for its tea gardens, scenic beauty, botanical gardens, and pleasant weather.",
+        image: "./images/Ooty.avif"
+    },
+    {
+        name: "Chennai",
+        country_name: "India",
+        state_name: "Tamilnadu",
+        description: "Chennai: Capital of Tamil Nadu, coastal city known for its beaches, cultural heritage, vibrant festivals, and cuisine.",
+        image: "./images/Chennai.jpg"
+    },
+    {
+        name: "Madurai",
+        country_name: "India",
+        state_name: "Tamilnadu",
+        description: "Madurai: Ancient city in Tamil Nadu, famous for Meenakshi Amman Temple, cultural heritage, and bustling markets.",
+        image: "./images/Madurai.webp"
+    },
+    {
+        name: "Dhanushkodi",
+        country_name: "India",
+        state_name: "Tamilnadu",
+        description: "Dhanushkodi: Abandoned town in Tamil Nadu, known for its eerie landscapes, historical ruins, and religious significance.",
+        image: "./images/Dhanushkodi.webp"
+    },
+    {
+        name: "Pondicherry",
+        country_name: "India",
+        state_name: "Tamilnadu",
+        description: "Pondicherry: Coastal town in Tamil Nadu, known for its French colonial architecture, serene beaches, and spiritual ambiance.",
+        image: "./images/Pondicherry.jpg"
+    },
+]
+//Data of places end
+        // Script for default opening page start
+        console.log(Places)
+        places =""
+        Places.map((allplace)=>{
+            places+= `<div class="col-md-4 col-sm-6 col-12 animate__animated wow animate__fadeInUp cards">
+                        <a href="../Details/${allplace.name.toLowerCase()}.html" class="card-link">
+                            <div class="card card2">
+                                <div class="container1">
+                                    <img src="${allplace.image}" alt="">
+                                </div>
+                                <div class="details">
+                                    <h3>${allplace.name}, ${allplace.country_name}</h3>
+                                    <p>${allplace.description}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>`
         })
-      </script>
+        document.getElementById("a").innerHTML = places
+        // Script for default opening page END
+
+        // Script for select all option start
+        document.getElementById("country").addEventListener("change", function() {
+    var selectedCountry = this.value;
+    if (selectedCountry === "all") {
+        // Show all places
+        document.getElementById("a").innerHTML = places;
+    } else {
+        // Filter places by selected country
+        var selectedPlaces = "";
+        let aa = Places.filter((selectedplace) => selectedplace.country_name === selectedCountry)
+        console.log(aa)
+        aa.map((place) => {
+            selectedPlaces += `<div class="col-md-4 col-sm-6 col-12 animate__animated wow animate__fadeInUp cards">
+                                  <a href="#" class="card-link">
+                                      <div class="card card2">
+                                          <div class="container1">
+                                              <img src="${place.image}" alt="">
+                                          </div>
+                                          <div class="details">
+                                              <h3>${place.name}, ${place.country_name}</h3>
+                                              <p>${place.description}</p>
+                                          </div>
+                                      </div>
+                                  </a>
+                              </div>`;
+        });
+        document.getElementById("a").innerHTML = selectedPlaces;
+    }
+});
+        // Script for select all option end
+
+        // Script for search bar start
+        document.getElementById("search").addEventListener("submit", function(e){
+          e.preventDefault();
+          let keyword = document.getElementById("searchbar").value;
+          searchedplaces =""
+          let bb= Places.filter((place) => place.country_name.toLowerCase().includes(keyword) || place.name.toLowerCase().includes(keyword))
+          console.log(bb)
+          if(bb.length>0){
+            bb.map((places)=>{
+            searchedplaces+=`<div class="col-md-4 col-sm-6 col-12 animate__animated wow animate__fadeInUp cards">
+                                  <a href="#" class="card-link">
+                                      <div class="card card2">
+                                          <div class="container1">
+                                              <img src="${places.image}" alt="">
+                                          </div>
+                                          <div class="details">
+                                              <h3>${places.name}, ${places.country_name}</h3>
+                                              <p>${places.description}</p>
+                                          </div>
+                                      </div>
+                                  </a>
+                             </div>`
+          })
+          document.getElementById("a").innerHTML = searchedplaces
+          }else{
+               const noresult= `<p class="text-center noresult">No result found!!</p>`
+               console.log(noresult)
+                document.getElementById('a').innerHTML = noresult
+          }
+        })
+        
+        // Script for search bar end
+
+
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        };
+        
+
+    </script>
+
+    <!-- Script for wow fn start  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js" integrity="sha512-Rd5Gf5A6chsunOJte+gKWyECMqkG8MgBYD1u80LOOJBfl6ka9CtatRrD4P0P5Q5V/z/ecvOCSYC8tLoWNrCpPg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+      new WOW().init();
+    </script>
+    <!-- Script for wow fn end  -->
+      
 </body>
 </html>
