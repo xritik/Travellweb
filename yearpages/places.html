@@ -36,7 +36,14 @@
         color: white;
         }
         .aa{
-          width: 90%;
+          width: 100%;
+          margin-top: 70px;
+        }
+        #memorybtn{
+          z-index: 10;
+        }
+        a{
+          color: white;
         }
         @media (max-width: 991px){
           .myselect{
@@ -65,9 +72,120 @@
             margin-top: 90px;
           }
           .aa{
-            margin-left: 20px;
+            width: 90%;
+            margin-left: 12.5px;
           }
         }
+
+
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.containerrr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 40px 20px 0;
+}
+.containerrr .heading {
+    width: 50%;
+    padding-bottom: 50px;
+}
+.containerrr .heading h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    font-weight: bolder;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #222;
+}
+.containerrr .heading h3 span {
+    font-weight: 100;
+}
+.containerrr .box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.containerrr .box .column {
+    display: flex;
+    flex-direction: column;
+    width: 32.5%;
+}
+.containerrr .box .column img {
+    width: 100%;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+@media (max-width: 769px) {
+    .containerrr .box {
+        flex-direction: column;
+    }
+    .containerrr .box .column {
+        width: 100%;
+    }
+}
+@media (max-width: 643px) {
+    .containerrr .heading {
+        width: 100%;
+    }
+    .containerrr .heading h3 {
+        font-size: 1.8rem;
+    }
+}
+.popup .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 1;
+    display: none;
+}
+.popup .content {
+    margin-top: 32px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    width: 80%;
+    height: 90%;
+    overflow: auto;
+    z-index: 2;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.popup .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: #222;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.popup.active .overlay {
+    display: block;
+}
+.popup.active {
+    display: block;
+}
+.popup {
+    display: none;
+}
+
+
     </style>
 </head>
 <body class="background">
@@ -154,6 +272,81 @@
   </nav>
 <!-- Nav bar end -->
 <br><br>
+
+
+
+
+<div class="popup" id="popup-1">
+  <div class="overlay" onclick="togglePopup()"></div>
+  <div class="content">
+      <div class="close-btn" onclick="togglePopup()">&times;</div>
+      <div class="containerrr">
+          <div class="heading">
+              <h3>Best <span>Memories❤️</span></h3>
+          </div>
+          <div class="box" id="a2">
+              <div class="column" id="firstcolumn">
+                  <!-- <img src="../imgvdos/bgimg.jpg" alt="">
+                  <img src="../imgvdos/bgimg2.jpg" alt="">
+                  <img src="../imgvdos/bgimg3.jpg" alt="">
+                  <img src="../imgvdos/bgimg4.jpg" alt="">
+                  <img src="../imgvdos/bgimg5.jpg" alt=""> -->
+              </div>
+              <div class="column" id="secondcolumn">
+                  <!-- <img src="../imgvdos/bgimg.jpg" alt="">
+                  <img src="../imgvdos/bgimg2.jpg" alt="">
+                  <img src="../imgvdos/bgimg5.jpg" alt="">
+                  <img src="../imgvdos/bgimg.jpg" alt="">
+                  <img src="../imgvdos/bgimg5.jpg" alt=""> -->
+              </div>
+              <div class="column" id="thirdcolumn">
+                  <!-- <img src="../imgvdos/bgimg.jpg" alt="">
+                  <img src="../imgvdos/bgimg3.jpg" alt="">
+                  <img src="../imgvdos/bgimg5.jpg" alt="">
+                  <img src="../imgvdos/bgimg.jpg" alt="">
+                  <img src="../imgvdos/bgimg2.jpg" alt=""> -->
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<script>
+  function togglePopup() {
+    document.getElementById("popup-1").classList.toggle("active");
+  }
+  function showPopup(id) {
+    let myplace = Places[id-1]
+    console.log(myplace)
+
+    togglePopup()
+
+    let card1 = ""
+    myplace.pics1.map((memory1)=>{
+      card1 += `<img src="${memory1}" alt="">`
+    })
+    document.getElementById("firstcolumn").innerHTML = card1;
+
+    let card2 = ""
+    myplace.pics2.map((memory2)=>{
+      card2 += `<img src="${memory2}" alt="">`
+    })
+    document.getElementById("secondcolumn").innerHTML = card2;
+
+    let card3 = ""
+    myplace.pics3.map((memory3)=>{
+      card3 += `<img src="${memory3}" alt="">`
+    })
+    document.getElementById("thirdcolumn").innerHTML = card3;
+  }
+</script>
+
+  </div>
+</div>
+
+
+
+
+
     <div class="container">
         <div class="row" id="a"></div>
     </div>
@@ -231,79 +424,121 @@
           }, 2500)
         });
     </script> -->
-
     <script>
+
+      let data_id = ""
 
 //Data of places start
 let Places =[
     {
+        id: "1",
         name: "Bangkok",
         country_name: "Thailand",
         description: "Bangkok: Vibrant capital of Thailand, known for its rich culture, delicious cuisine, and bustling streets.",
         image: "./images/Bangkok.jpg"
     },
     {
+        id: "2",
         name: "Phuket Island",
         country_name: "Thailand",
         description: "Phuket Island: Famous Thai destination offering stunning beaches, vibrant nightlife, and adventurous water activities.",
         image: "./images/Phuket Island.jpg"
     },
     {
+        id: "3",
         name: "Krabi",
         country_name: "Thailand",
         description: "Krabi: Coastal paradise in Thailand, boasting limestone cliffs, pristine beaches, and opportunities for adventure and relaxation.",
         image: "./images/Krabi.webp"
     },
     {
+        id: "4",
         name: "Phi-Phi Island",
         country_name: "Thailand",
         description: "Phi Phi Island: Iconic Thai destination with turquoise waters, limestone formations, vibrant nightlife, and breathtaking scenery.",
         image: "./images/Phi-Phi-Island.jpg"
     },
     {
+        id: "5",
         name: "Uluwatu Temple Bali",
         country_name: "Indonesia",
         description: "Uluwatu Temple: Majestic sea temple in Bali perched on cliffs, offering stunning sunset views and cultural performances.",
         image: "./images/Uluwatu-Temple-Bali.jpg"
     },
     {
+        id: "6",
         name: "Bali",
         country_name: "Indonesia",
         description: "Bali: Indonesian island renowned for its lush landscapes, vibrant culture, stunning beaches, and spiritual atmosphere.",
         image: "./images/Bali.jpg"
     },
     {
+        id: "7",
         name: "Nusa Penida",
         country_name: "Indonesia",
         description: "Nusa Penida: Picturesque Indonesian island with rugged cliffs, crystal-clear waters, pristine beaches, and diverse marine life.",
         image: "./images/nusa-penida-beach.jpg"
     },
     {
+        id: "8",
         name: "Seminyak Beach",
         country_name: "Indonesia",
         description: "Seminyak Beach: Trendy Balinese destination with golden sands, world-class surfing, upscale resorts, and vibrant nightlife scene.",
         image: "./images/Seminyak Beach.avif"
     },
     {
+        id: "9",
         name: "Canggu",
         country_name: "Indonesia",
         description: "Canggu: Bali's trendy coastal village with surf breaks, beach clubs, rice fields, and bohemian atmosphere.",
         image: "./images/Canggu.jpg"
     },
     {
+        id: "10",
         name: "Ubud",
         country_name: "Indonesia",
         description: "Ubud: Cultural heart of Bali, surrounded by lush rice paddies, art galleries, temples, and serene landscapes.",
         image: "./images/Ubud.jpg"
     },
     {
+        id: "11",
         name: "Rishikesh",
         country_name: "India",
         state_name: "UttaraUttarakhand",
         description: "Rishikesh: Spiritual hub in India, nestled in the Himalayas, renowned for yoga, meditation, and adventure sports.",
-        image: "./images/Rishikesh.webp"
+        image: "./images/Rishikesh.webp",
+        pics1: [
+          './memoimages/Rishikeshmemo1.1.jpg',
+          './memoimages/Rishikeshmemo1.2.jpg',
+          './memoimages/Rishikeshmemo1.3.jpg',
+          './memoimages/Rishikeshmemo1.4.jpg',
+          './memoimages/Rishikeshmemo1.5.jpg',
+          './memoimages/Rishikeshmemo1.6.jpg',
+          './memoimages/Rishikeshmemo1.7.jpg',
+          './memoimages/Rishikeshmemo1.8.jpg'
+        ],
+        pics2: [
+          './memoimages/Rishikeshmemo2.1.jpg',
+          './memoimages/Rishikeshmemo2.2.jpg',
+          './memoimages/Rishikeshmemo2.3.jpg',
+          './memoimages/Rishikeshmemo2.4.jpg',
+          './memoimages/Rishikeshmemo2.5.jpg',
+          './memoimages/Rishikeshmemo2.6.jpg',
+          './memoimages/Rishikeshmemo2.7.jpg',
+          './memoimages/Rishikeshmemo2.8.jpg'
+        ], 
+        pics3: [
+          './memoimages/Rishikeshmemo3.1.jpg',
+          './memoimages/Rishikeshmemo3.2.jpg',
+          './memoimages/Rishikeshmemo3.3.jpg',
+          './memoimages/Rishikeshmemo3.4.jpg',
+          './memoimages/Rishikeshmemo3.5.jpg',
+          './memoimages/Rishikeshmemo3.6.jpg',
+          './memoimages/Rishikeshmemo3.7.jpg'
+        ] 
     },
     {
+        id: "12",
         name: "Haridwar",
         country_name: "India",
         state_name: "UttaraUttarakhand",
@@ -311,6 +546,7 @@ let Places =[
         image: "./images/Haridwar.jpg"
     },
     {
+        id: "13",
         name: "Dehradun",
         country_name: "India",
         state_name: "UttaraUttarakhand",
@@ -318,6 +554,7 @@ let Places =[
         image: "./images/Dehradun.jpg"
     },
     {
+        id: "14",
         name: "Mussoorie",
         country_name: "India",
         state_name: "UttaraUttarakhand",
@@ -325,6 +562,7 @@ let Places =[
         image: "./images/Mussoorie.jpg"
     },
     {
+        id: "15",
         name: "Devprayag",
         country_name: "India",
         state_name: "UttaraUttarakhand",
@@ -332,6 +570,7 @@ let Places =[
         image: "./images/Devprayag.jpg"
     },
     {
+        id: "16",
         name: "Rudraprayag",
         country_name: "India",
         state_name: "UttaraUttarakhand",
@@ -339,6 +578,7 @@ let Places =[
         image: "./images/Rudraprayag.jpg"
     },
     {
+        id: "17",
         name: "Manikaran",
         country_name: "India",
         state_name: "Himachal",
@@ -346,6 +586,7 @@ let Places =[
         image: "./images/Manikaran.avif"
     },
     {
+        id: "18",
         name: "Tosh",
         country_name: "India",
         state_name: "Himachal",
@@ -353,6 +594,7 @@ let Places =[
         image: "./images/Tosh.jpg"
     },
     {
+        id: "19",
         name: "Darcha",
         country_name: "India",
         state_name: "Himachal",
@@ -360,6 +602,7 @@ let Places =[
         image: "./images/Darcha.jpg"
     },
     {
+        id: "20",
         name: "Manali",
         country_name: "India",
         state_name: "Himachal",
@@ -367,6 +610,7 @@ let Places =[
         image: "./images/Manali.jpg"
     },
     {
+        id: "21",
         name: "Koksar",
         country_name: "India",
         state_name: "Himachal",
@@ -374,6 +618,7 @@ let Places =[
         image: "./images/Koksar.webp"
     },
     {
+        id: "22",
         name: "Dharamshala",
         country_name: "India",
         state_name: "Himachal",
@@ -381,6 +626,7 @@ let Places =[
         image: "./images/Dharamshala.jpg"
     },
     {
+        id: "23",
         name: "Srinagar",
         country_name: "India",
         state_name: "Jammu & Kashmir",
@@ -388,6 +634,7 @@ let Places =[
         image: "./images/Srinagar.jpg"
     },
     {
+        id: "24",
         name: "Leh",
         country_name: "India",
         state_name: "Ladakh",
@@ -395,6 +642,7 @@ let Places =[
         image: "./images/Leh.jpg"
     },
     {
+        id: "25",
         name: "Zanskar valley",
         country_name: "India",
         state_name: "Ladakh",
@@ -402,6 +650,7 @@ let Places =[
         image: "./images/Zanskar valley.jpg"
     },
     {
+        id: "26",
         name: "Rameshwaram",
         country_name: "India",
         state_name: "Tamilnadu",
@@ -409,6 +658,7 @@ let Places =[
         image: "./images/Rameshwaram.webp"
     },
     {
+        id: "27",
         name: "Coimbatore",
         country_name: "India",
         state_name: "Tamilnadu",
@@ -416,6 +666,7 @@ let Places =[
         image: "./images/Coimbatore.jpeg"
     },
     {
+        id: "28",
         name: "Ooty",
         country_name: "India",
         state_name: "Tamilnadu",
@@ -423,6 +674,7 @@ let Places =[
         image: "./images/Ooty.avif"
     },
     {
+        id: "29",
         name: "Chennai",
         country_name: "India",
         state_name: "Tamilnadu",
@@ -430,6 +682,7 @@ let Places =[
         image: "./images/Chennai.jpg"
     },
     {
+        id: "30",
         name: "Madurai",
         country_name: "India",
         state_name: "Tamilnadu",
@@ -437,6 +690,7 @@ let Places =[
         image: "./images/Madurai.webp"
     },
     {
+        id: "31",
         name: "Dhanushkodi",
         country_name: "India",
         state_name: "Tamilnadu",
@@ -444,6 +698,7 @@ let Places =[
         image: "./images/Dhanushkodi.webp"
     },
     {
+        id: "32",
         name: "Pondicherry",
         country_name: "India",
         state_name: "Tamilnadu",
@@ -456,14 +711,14 @@ let Places =[
         console.log(Places)
         places =""
         Places.map((allplace)=>{
-            places+= `<div class="col-md-4 col-sm-6 col-12 animate__animated wow animate__fadeInUp cards">
+            places+= `<div class="col-md-4 col-sm-6 col-12 animate__animated wow animate__fadeInUp cards" data_id="${allplace.id}">
                         <a href="../Details/${allplace.name.toLowerCase()}.html" class="card-link">
                             <div class="card card2">
                                 <div class="container1">
                                     <img src="${allplace.image}" alt="">
                                 </div>
                                 <div class="details">
-                                    <h3>${allplace.name}, ${allplace.country_name}</h3>
+                                    <h3>${allplace.name}, ${allplace.country_name} <a href="#">  <button onclick="showPopup(${allplace.id})" class="btn btn-success btn-sm mx-1" id="memorybtn">Memories❤️</button>  </a>   </h3>
                                     <p>${allplace.description}</p>
                                 </div>
                             </div>
@@ -485,14 +740,14 @@ let Places =[
         let aa = Places.filter((selectedplace) => selectedplace.country_name === selectedCountry)
         console.log(aa)
         aa.map((place) => {
-            selectedPlaces += `<div class="col-md-4 col-sm-6 col-12 animate__animated wow animate__fadeInUp cards">
+            selectedPlaces += `<div class="col-md-4 col-sm-6 col-12 animate__animated wow animate__fadeInUp cards" data_id="${place.id}">
                                   <a href="#" class="card-link">
                                       <div class="card card2">
                                           <div class="container1">
                                               <img src="${place.image}" alt="">
                                           </div>
                                           <div class="details">
-                                              <h3>${place.name}, ${place.country_name}</h3>
+                                              <h3>${place.name}, ${place.country_name}  <a href="#">  <button onclick="showPopup(${place.id})" class="btn btn-success btn-sm mx-1" id="memorybtn">Memories❤️</button>  </a>  </h3>
                                               <p>${place.description}</p>
                                           </div>
                                       </div>
@@ -509,23 +764,23 @@ let Places =[
           e.preventDefault();
           let keyword = document.getElementById("searchbar").value;
           searchedplaces =""
-          let bb= Places.filter((place) => place.country_name.toLowerCase().includes(keyword) || place.name.toLowerCase().includes(keyword))
+          let bb= Places.filter((place) => place.country_name.toLowerCase().includes(keyword.toLowerCase()) || place.name.toLowerCase().includes(keyword.toLowerCase()))
           console.log(bb)
           if(bb.length>0){
             bb.map((places)=>{
-            searchedplaces+=`<div class="col-md-4 col-sm-6 col-12 animate__animated wow animate__fadeInUp cards">
+            searchedplaces+=`<div class="col-md-4 col-sm-6 col-12 animate__animated wow animate__fadeInUp cards" data_id="${places.id}">
                                   <a href="#" class="card-link">
                                       <div class="card card2">
                                           <div class="container1">
                                               <img src="${places.image}" alt="">
                                           </div>
                                           <div class="details">
-                                              <h3>${places.name}, ${places.country_name}</h3>
+                                              <h3>${places.name}, ${places.country_name}  <a href="#">  <button onclick="showPopup(${places.id})" class="btn btn-success btn-sm mx-1" id="memorybtn">Memories❤️</button>  </a>  </h3>
                                               <p>${places.description}</p>
                                           </div>
                                       </div>
                                   </a>
-                             </div>`
+                              </div>`
           })
           document.getElementById("a").innerHTML = searchedplaces
           }else{
@@ -551,6 +806,16 @@ let Places =[
       new WOW().init();
     </script>
     <!-- Script for wow fn end  -->
+
+
+
+
+
+    <!-- <script>
+      function togglePopup(){
+        document.getElementById("popup-1").classList.toggle("active")
+      }
+    </script> -->
       
 </body>
 </html>

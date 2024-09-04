@@ -25,7 +25,6 @@ body{
         color: aliceblue;
     }
     .aa{
-      width: 90%;
       margin-top: 70px;
     }
     @media (max-width: 991px){
@@ -40,6 +39,7 @@ body{
         width: 25px;
       }
       .aa{
+        width: 90%;
         margin-left: 20px;
       }
     }
