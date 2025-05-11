@@ -31,7 +31,7 @@ Travellweb/            <br>
 ├── Css                <br>
 ├── Details            <br>
 ├── Detailsofplaces    <br>
-│   └── filter.png     <br>
+│   └── places.js      <br>
 ├── imgvdos            <br>
 ├── yearpages          <br>
 ├── .gitignore         <br>
