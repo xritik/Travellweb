@@ -312,32 +312,48 @@
 </div>
 <script>
   function togglePopup() {
-    document.getElementById("popup-1").classList.toggle("active");
+  document.getElementById("popup-1").classList.toggle("active");
+}
+
+function showPopup(id) {
+  let myplace = Places[id - 1];
+  console.log(myplace);
+
+  togglePopup();
+
+  let card1 = "", card2 = "", card3 = "";
+
+  if (myplace.pics1 && myplace.pics1.length > 0) {
+    myplace.pics1.forEach((memory1) => {
+      card1 += `<img src="${memory1}" alt="">`;
+    });
   }
-  function showPopup(id) {
-    let myplace = Places[id-1]
-    console.log(myplace)
 
-    togglePopup()
-
-    let card1 = ""
-    myplace.pics1.map((memory1)=>{
-      card1 += `<img src="${memory1}" alt="">`
-    })
-    document.getElementById("firstcolumn").innerHTML = card1;
-
-    let card2 = ""
-    myplace.pics2.map((memory2)=>{
-      card2 += `<img src="${memory2}" alt="">`
-    })
-    document.getElementById("secondcolumn").innerHTML = card2;
-
-    let card3 = ""
-    myplace.pics3.map((memory3)=>{
-      card3 += `<img src="${memory3}" alt="">`
-    })
-    document.getElementById("thirdcolumn").innerHTML = card3;
+  if (myplace.pics2 && myplace.pics2.length > 0) {
+    myplace.pics2.forEach((memory2) => {
+      card2 += `<img src="${memory2}" alt="">`;
+    });
   }
+
+  if (myplace.pics3 && myplace.pics3.length > 0) {
+    myplace.pics3.forEach((memory3) => {
+      card3 += `<img src="${memory3}" alt="">`;
+    });
+  }
+
+  // If all three are empty, show message
+  if (!card1 && !card2 && !card3) {
+    document.getElementById("a2").innerHTML = "<p>No any images</p>";
+  } else {
+    // Otherwise, populate the columns
+    document.getElementById("a2").innerHTML = `
+      <div class="column" id="firstcolumn">${card1}</div>
+      <div class="column" id="secondcolumn">${card2}</div>
+      <div class="column" id="thirdcolumn">${card3}</div>
+    `;
+  }
+}
+
 </script>
 
   </div>
