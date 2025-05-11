@@ -1,4 +1,4 @@
-# 💬 Travellweb - Personal Travel Diary Web App
+# 🌍 Travellweb - Personal Travel Diary Web App
 
 A lightweight and interactive **Travel Diary Web App** to log your visited places as cards, each with a photo memory gallery. Easily search and filter your experiences by place name or country for quick access and better organization.
 <br>
