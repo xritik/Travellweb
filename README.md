@@ -18,31 +18,27 @@ A lightweight and interactive **Travel Diary Web App** to log your visited place
 ## 📸 Screenshots
 <br>
 
-- **Login Page**
-<img src="frontend/src/imgs/Chat_Hub_Login_Page.png">
-<br>
-
-- **Dashboard Page**
-<img src="frontend/src/imgs/Chat_Hub_Dashboard.png">
+- **Home Page**
+<img src="imgvdos/png/Dashboard.png">
 <br>
 
 - **Chatting Page**
-<img src="frontend/src/imgs/Chat_Hub_Chatting.png">
+<img src="imgvdos/png/Visited_Places.png">
 
 ## 📂 Folder Structure
 
-Travellweb/
-├── Css
-├── Details
-├── Detailsofplaces
-│   └── filter.png
-├── imgvdos
-├── yearpages
-├── .gitignore
-├── index.html
-├── LICENSE
-├── parts.html
-└── README.md
+Travellweb/            <br>
+├── Css                <br>
+├── Details            <br>
+├── Detailsofplaces    <br>
+│   └── filter.png     <br>
+├── imgvdos            <br>
+├── yearpages          <br>
+├── .gitignore         <br>
+├── index.html         <br>
+├── LICENSE            <br>
+├── parts.html         <br>
+└── README.md          <br>
 
 <br>
 <br>
