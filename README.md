@@ -65,7 +65,7 @@ cd Travellweb
 <br>
 <br>
 
-**2. Get Live your Application**
+**2. Get Live this Application**
 [Live](https://xritik.github.io/Travellweb)
 <br>
 <br>
